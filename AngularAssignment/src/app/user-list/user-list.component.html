@@ -1,0 +1,36 @@
+<h1>User List</h1>
+<table>
+    <tr>
+        <th>S.No</th>
+        <th>First Name</th>
+        <th>Email</th>
+        <th></th>
+    </tr>
+    <tr *ngFor="let user of users; let i = index">
+        <td>{{i + 1}}</td>
+        <td>{{user.FirstName}}</td>
+        <td>{{user.Email}}</td>
+        <td><button class="btn btn-primary" (click)="onShowUserDetail(user)">Show Detail</button></td>
+    </tr>
+</table>
+
+<hr><br>
+<h2 *ngIf="showUserDetail">User Detail</h2>
+<table *ngIf="showUserDetail">
+    <tr>
+        <td>First Name:</td>
+        <td>{{user.FirstName}}</td>
+    </tr>
+    <tr>
+        <td>Last Name:</td>
+        <td>{{user.LastName}}</td>
+    </tr>
+    <tr>
+        <td>Email:</td>
+        <td>{{user.Email}}</td>
+    </tr>
+    <tr>
+        <td>Active</td>
+        <td>{{user.IsActive}}</td>
+    </tr>
+</table>
